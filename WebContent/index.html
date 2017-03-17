@@ -11,7 +11,7 @@
 
 </head>
 
-<body ng-cloak>
+<body>
 	<div ng-controller="WeatherController"
 		class="container-fluid col-md-5 col-md-offset-3 marginSet">
 		<div class="panel panel-info">
@@ -33,11 +33,6 @@
 						</span>
 
 
-						<!-- <span
-							class="input-group-btn">
-							<button ng-click="SearchWeather()" class="btn btn-primary"
-								id="searchWeatherBtn" type="button">Fetch Weather Report</button>
-						</span> -->
 					</div>
 				</div>
 
@@ -89,61 +84,41 @@
 
 					
 
-					<!-- <div class="row">
-						
-						<div class="col-md-4">
-						Wind
-						
-						</div>
-						<div class="col-md-8">Speed <span ng-bind="wind.speed"></span>m/s, Direction (<span ng-bind="wind.deg"></span>)</div>
-						
-						</div>
-						
-						
-						<div class="row">
-						
-						<div class="col-md-4">
-						Clouds (Cloudiness) 
-						
-						</div>
-						<div class="col-md-8"><span ng-bind="clouds.all"></span></div>
-						
-						</div> -->
 					<div class="table-responsive marginTop">
 						<table class="table  table-hover">
 
 
 
 							<tr>
-								<td>Wind</td>
-								<td>Speed <span ng-bind="wind.speed"></span> m/s, Direction
+								<td><span>Wind</span><span class="windImg"></span></td>
+								<td>Speed <span ng-bind="windReport.speed"></span> m/s, Direction
 									(<span ng-bind="wind.deg"></span>) degrees
 								</td>
 							</tr>
 
 							<tr>
-								<td>Clouds (Cloudiness)</td>
-								<td><span ng-bind="clouds.all"></span>%</td>
+								<td><span>Clouds (Cloudiness)</span><span class="glyphicon glyphicon-cloud cloudAlign"></span></td>
+								<td><span ng-bind="cloudsReport.all"></span>%</td>
 							</tr>
 							<tr>
-								<td>Humidity</td>
+								<td><span>Humidity</span><span class="humidImg"></span></td>
 								<td><span ng-bind="other.humidity"></span>%</td>
 							</tr>
 							<tr>
-								<td>Pressure</td>
+								<td><span>Pressure</span><span class="pressureImg"></span></td>
 								<td><span ng-bind="other.pressure"></span> hPa</td>
 							</tr>
 							<tr>
-								<td>Sunrise</td>
+								<td><span>Sunrise</span><span class="sunriseImg"></span></td>
 								<td><span
 									ng-bind="country.sunrise * 1000 | date:'HH:mm:ss'"></span></td>
 							</tr>
 							<tr>
-								<td>Sunset</td>
+								<td><span>Sunset</span><span class="sunsetImg"></span></td>
 								<td><span ng-bind="country.sunset * 1000 | date:'HH:mm:ss'"></span></td>
 							</tr>
 							<tr>
-								<td>Geo Coordinates</td>
+								<td><span>Geo Coordinates</span><span class="coordsImg"></span></td>
 								<td>Latitude: <span ng-bind="latlong.lat"></span>,
 									Longitude: <span ng-bind="latlong.lon"></span></td>
 							</tr>

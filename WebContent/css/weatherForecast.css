@@ -37,3 +37,67 @@
 .marginTop{
 	margin-top:25px;
 }
+.windImg{
+	background-image: url(../images/winds.jpg);
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 20px;
+    padding-right: 25px;
+    background-size: 100%;
+     margin-left:7px;
+    
+}
+.humidImg{
+	background-image: url(../images/humidity.jpg);
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 20px;
+    padding-right: 25px;
+    background-size: 100%;
+     margin-left:7px;
+    
+}
+.pressureImg{
+	background-image: url(../images/pressure.jpg);
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 20px;
+    padding-right: 25px;
+    background-size: 100%;
+     margin-left:7px;
+    
+}
+.sunriseImg{
+	background-image: url(../images/sunrise.png);
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 20px;
+    padding-right: 25px;
+    margin-left:7px;
+    background-size: 100%;
+    
+}
+.sunsetImg{
+	background-image: url(../images/sunset.png);
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 20px;
+    padding-right: 25px;
+    background-size: 100%;
+     margin-left:7px;
+    
+}
+.coordsImg{
+	background-image: url(../images/coords.png);
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 20px;
+    padding-right: 25px;
+    background-size: 100%;
+     margin-left:7px;
+    
+}
+.cloudAlign{
+	    margin-left: 7px;
+    top: 3px;
+}

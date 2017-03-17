@@ -1,0 +1,39 @@
+.searchIcon span{
+    background-color: #FFF;
+    cursor : pointer;
+}
+
+.searchIcon input{
+    border-right-style:none;
+}
+
+.alignment{
+	text-align:center;
+}
+
+.marginSet{
+	margin-top:30px;
+}
+.minTemp{
+	background-image: url(../images/minTemp.jpg);
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 20px;
+    background-size: 100%;
+    float: left;
+}
+.maxTemp{
+	background-image: url(../images/maxTemp.jpg);
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 20px;
+    background-size: 100%;
+    float: left;
+}
+.gap{
+	    float: left;
+    min-width: 50%;
+}
+.marginTop{
+	margin-top:25px;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html ng-app="weatherForecastApp">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weather Forecast Application</title>
+<link rel="stylesheet" href="frameworks/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/weatherForecast.css">
+
+
+</head>
+
+<body ng-cloak>
+	<div ng-controller="WeatherController"
+		class="container-fluid col-md-5 col-md-offset-3 marginSet">
+		<div class="panel panel-info">
+			<div class="panel-heading alignment">Weather Forecast
+				Application</div>
+
+			<div class="panel-body" ng-controller="manualWeatherCtrl">
+
+				<div class="col-lg-12">
+					<div class="input-group input-group-sm searchIcon">
+						<input type="search" ng-model="inputParam" id="searchWeather"
+							class="form-control"
+							placeholder="Please enter Country name or Zip Code."
+							ng-keyup="$event.keyCode == 13 ? SearchWeather() : null">
+
+						<span title="click to search weather" class="input-group-addon"
+							ng-click="SearchWeather()"> <i
+							class="glyphicon glyphicon-search"></i>
+						</span>
+
+
+						<!-- <span
+							class="input-group-btn">
+							<button ng-click="SearchWeather()" class="btn btn-primary"
+								id="searchWeatherBtn" type="button">Fetch Weather Report</button>
+						</span> -->
+					</div>
+				</div>
+
+				<div ng-show="weatherFound" class="col-lg-12" id="fetchedWeather">
+					<h3>
+						<span id="weatherInfo">Current Weather in <span
+							ng-bind="locationName"></span>, <span ng-bind="country.country"></span>
+						</span><img
+							ng-src="http://openweathermap.org/images/flags/{{country.country | lowercase}}.png">
+					</h3>
+					<h3>
+						<img ng-src="http://openweathermap.org/img/w/{{weather.icon}}.png">
+						<span ng-bind="other.temp"></span> &deg;C <span
+							ng-bind="weather.main"></span> (<span
+							ng-bind="weather.description"></span>)
+					</h3>
+					<p ng-model="getDate">
+						Fetched at: <span
+							ng-bind="getDate * 1000 |
+						date:'dd/MM/yyyy HH:mm:ss'"></span>
+					</p>
+
+					<div class="gap">
+
+						<div class="minTemp"></div>
+						<div>
+							<div>Minimum Temperature</div>
+							<div>
+								<span ng-bind="other.temp_min"></span>
+								<span>&deg; C</span>
+							</div>
+							
+						</div>
+					</div>
+					
+					
+					<div>
+
+						<div class="maxTemp"></div>
+						<div>
+							<div>Maximum Temperature</div>
+							<div>
+								<span ng-bind="other.temp_max"></span>
+								<span>&deg; C</span>
+							</div>
+							
+						</div>
+					</div>
+
+					
+
+					<!-- <div class="row">
+						
+						<div class="col-md-4">
+						Wind
+						
+						</div>
+						<div class="col-md-8">Speed <span ng-bind="wind.speed"></span>m/s, Direction (<span ng-bind="wind.deg"></span>)</div>
+						
+						</div>
+						
+						
+						<div class="row">
+						
+						<div class="col-md-4">
+						Clouds (Cloudiness) 
+						
+						</div>
+						<div class="col-md-8"><span ng-bind="clouds.all"></span></div>
+						
+						</div> -->
+					<div class="table-responsive marginTop">
+						<table class="table  table-hover">
+
+
+
+							<tr>
+								<td>Wind</td>
+								<td>Speed <span ng-bind="wind.speed"></span> m/s, Direction
+									(<span ng-bind="wind.deg"></span>) degrees
+								</td>
+							</tr>
+
+							<tr>
+								<td>Clouds (Cloudiness)</td>
+								<td><span ng-bind="clouds.all"></span>%</td>
+							</tr>
+							<tr>
+								<td>Humidity</td>
+								<td><span ng-bind="other.humidity"></span>%</td>
+							</tr>
+							<tr>
+								<td>Pressure</td>
+								<td><span ng-bind="other.pressure"></span> hPa</td>
+							</tr>
+							<tr>
+								<td>Sunrise</td>
+								<td><span
+									ng-bind="country.sunrise * 1000 | date:'HH:mm:ss'"></span></td>
+							</tr>
+							<tr>
+								<td>Sunset</td>
+								<td><span ng-bind="country.sunset * 1000 | date:'HH:mm:ss'"></span></td>
+							</tr>
+							<tr>
+								<td>Geo Coordinates</td>
+								<td>Latitude: <span ng-bind="latlong.lat"></span>,
+									Longitude: <span ng-bind="latlong.lon"></span></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript"
+		src="frameworks/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="frameworks/angular/angular.min.js"></script>
+	<script type="text/javascript"
+		src="js/controllers/weatherForecastController.js"></script>
+	<script type="text/javascript"
+		src="js/services/weatherForecastService.js"></script>
+
+</body>
+
+
+</html>
